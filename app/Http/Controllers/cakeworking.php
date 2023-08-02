@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\cake;
 
 class cakeworking extends Controller
 {
@@ -12,7 +13,8 @@ class cakeworking extends Controller
     public function index()
     {
         //
-        return view('cakes.index');
+        $cakes = cake::all();
+        return view('cakes.index', compact('cakes'));
     }
 
     /**
@@ -28,7 +30,7 @@ class cakeworking extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
